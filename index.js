@@ -360,7 +360,9 @@ function init() {
 
 function removeElement(array, index, element) {
     array.splice(index, 1);
-    $container.removeChild(element);
+    if ($container.contains(element)) {
+        $container.removeChild(element);
+    }
 }
 
 window.addEventListener('keydown', handleKeyPress);
