@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+    background-color: #1a1a2e;
+    font-family: 'Jersey 15', sans-serif;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.game-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 800px;
+    height: 600px;
+    background-image: url('images/background-blue.png');
+    animation: scroll-background 5s linear infinite;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
+    position: relative;
+    z-index: -2;
+}
+
+@keyframes scroll-background {
+    from {
+        background-position-y: 0px;
+    }
+    to {
+        background-position-y: 256px;
+    }
+}
+
+header {
+    text-align: center;
+    background-color: #16213e;
+    padding: 5px;
+    color: #fb53c9;
+    display: flex;
+    flex-direction: row;
+}
+
+header div {
+    width: 33%;
+}
+
+header div p {
+    position: relative;
+    display: inline;
+    color: #791c1c;
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+    font-size: 11px;
+}
+
+.main .laser {
+    position: absolute;
+    margin-left: -2.5px;
+    height: 25px;
+    z-index: -1;
+}
+
+.main .enemyLaser {
+    position: absolute;
+    margin-left: -2.5px;
+    height: 20px;
+    z-index: -1;
+}
+
+.main .enemy {
+    position: absolute;
+}
+
+.menu {
+    display: block;
+    position: absolute;
+    background-color: rgba(54, 55, 50, 0.6);
+    color: #FFF;
+    padding: 20px 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    text-align: center;
+    animation: pop-in 1s;
+}
+
+.options, .pause, .lose, .win {
+    display: none;
+    position: absolute;
+    padding: 20px 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    text-align: center;
+    animation: pop-in 1s;
+}
+
+.menu, .options, .lose, .win {
+    background-color: #1a1a2e;
+    color: #fff;
+}
+
+.pause {
+    background-color: #1a1a2e;
+    color: #fff;
+}
+
+.lose h1{
+    color: #ff4d4d;
+}
+.win h1 {
+    color: #6756ff;
+}
+
+#timer {
+    display: none;
+}
